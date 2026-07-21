@@ -1,0 +1,24 @@
+name = "edgeevercf"
+main = "apps/api/src/index.ts"
+compatibility_date = "2026-06-26"
+workers_dev = true
+
+[assets]
+directory = "apps/web/dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*", "/mcp"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "edgeever"
+database_id = "2a5e1246-bf91-46b0-84e1-3e35c5b0b9b6"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "RESOURCES"
+bucket_name = "edgeever-resources"
+preview_bucket_name = "edgeever-resources"
+
+[observability]
+enabled = true
